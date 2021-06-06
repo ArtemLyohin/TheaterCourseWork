@@ -1,0 +1,62 @@
+package com.example.theatercoursework.service.producer.impls;
+
+import com.example.theatercoursework.data.FakeProducer;
+import com.example.theatercoursework.model.Producer;
+import com.example.theatercoursework.repository.producer.ProducerRepository;
+import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
+import com.example.theatercoursework.service.producer.interfaces.IProducerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Service
+public class ProducerServiceImpl implements IProducerService {
+    @Autowired
+    ProducerRepository repository;
+
+    @Autowired
+    FakeProducer fakeProducer;
+
+    @Autowired
+    EmployeeServiceImpl employeeService;
+
+    @PostConstruct
+    void init() {
+//        repository.saveAll(fakeProducer.getProducers());
+    }
+
+    @Override
+    public Producer create(Producer producer) {
+        producer.setModified_at(LocalDateTime.now());
+        producer.setCreated_at(LocalDateTime.now());
+        employeeService.create(producer);
+        return repository.save(producer);
+    }
+
+    @Override
+    public Producer update(Producer producer) {
+        producer.setModified_at(LocalDateTime.now());
+        employeeService.update(producer);
+        return repository.save(producer);
+    }
+
+    @Override
+    public Producer delete(Producer producer) {
+        repository.delete(producer);
+        employeeService.delete(producer);
+        return producer;
+    }
+
+    @Override
+    public Producer getById(String id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Producer> getAll() {
+        return repository.findAll();
+    }
+}
