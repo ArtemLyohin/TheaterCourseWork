@@ -5,6 +5,7 @@ import com.example.theatercoursework.data.FakeEmployee;
 import com.example.theatercoursework.model.Actor;
 import com.example.theatercoursework.model.Employee;
 import com.example.theatercoursework.repository.actor.ActorRepository;
+import com.example.theatercoursework.repository.director.DirectorRepository;
 import com.example.theatercoursework.repository.employee.EmployeeRepository;
 import com.example.theatercoursework.repository.musician.MusicianRepository;
 import com.example.theatercoursework.repository.producer.ProducerRepository;
@@ -38,6 +39,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Autowired
     ServantRepository servantRepository;
 
+    @Autowired
+    DirectorRepository directorRepository;
+
     @PostConstruct
     void init() {
 //        repository.saveAll(actorRepository.findAll()
@@ -47,28 +51,27 @@ public class EmployeeServiceImpl implements IEmployeeService {
 //                                                                    item.getSalary(),
 //                                                                    item.getEmploymentDate(), item.getDescription(),
 //                                                                    item.getCreated_at(), item.getModified_at()))
-//                                          .collect(
-//                                                  Collectors.toList()));
+//                                          .collect(Collectors.toList()));
 //
 //        repository.saveAll(musicianRepository.findAll()
 //                                             .stream()
 //                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
 //                                                                       item.getBirthDate(), item.getEmployeeType(),
 //                                                                       item.getSalary(),
-//                                                                       item.getEmploymentDate(), item.getDescription(),
+//                                                                       item.getEmploymentDate(), item
+//                                                                       .getDescription(),
 //                                                                       item.getCreated_at(), item.getModified_at()))
-//                                             .collect(
-//                                                     Collectors.toList()));
+//                                             .collect(Collectors.toList()));
 //
 //        repository.saveAll(producerRepository.findAll()
 //                                             .stream()
 //                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
 //                                                                       item.getBirthDate(), item.getEmployeeType(),
 //                                                                       item.getSalary(),
-//                                                                       item.getEmploymentDate(), item.getDescription(),
+//                                                                       item.getEmploymentDate(), item
+//                                                                       .getDescription(),
 //                                                                       item.getCreated_at(), item.getModified_at()))
-//                                             .collect(
-//                                                     Collectors.toList()));
+//                                             .collect(Collectors.toList()));
 //
 //        repository.saveAll(servantRepository.findAll()
 //                                            .stream()
@@ -77,22 +80,26 @@ public class EmployeeServiceImpl implements IEmployeeService {
 //                                                                      item.getSalary(),
 //                                                                      item.getEmploymentDate(), item.getDescription(),
 //                                                                      item.getCreated_at(), item.getModified_at()))
-//                                            .collect(
-//                                                    Collectors.toList()));
+//                                            .collect(Collectors.toList()));
+//  repository.saveAll(directorRepository.findAll()
+//                                            .stream()
+//                                            .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
+//                                                                      item.getBirthDate(), item.getEmployeeType(),
+//                                                                      item.getSalary(),
+//                                                                      item.getEmploymentDate(), item.getDescription(),
+//                                                                      item.getCreated_at(), item.getModified_at()))
+//                                            .collect(Collectors.toList()));
 
 
     }
 
     @Override
     public Employee create(Employee employee) {
-        employee.setCreated_at(LocalDateTime.now());
-        employee.setModified_at(LocalDateTime.now());
         return repository.save(employee);
     }
 
     @Override
     public Employee update(Employee employee) {
-        employee.setModified_at(LocalDateTime.now());
         return repository.save(employee);
     }
 

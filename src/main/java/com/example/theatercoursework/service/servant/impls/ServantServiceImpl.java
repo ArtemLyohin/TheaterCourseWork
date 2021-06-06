@@ -25,7 +25,7 @@ public class ServantServiceImpl implements IServantService {
 
     @PostConstruct
     void init() {
-        repository.saveAll(fakeServant.getServants());
+//        repository.saveAll(fakeServant.getServants());
     }
 
     @Override
