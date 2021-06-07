@@ -1,7 +1,11 @@
 package com.example.theatercoursework.service.theater.impls;
 
 import com.example.theatercoursework.data.FakeTheater;
+import com.example.theatercoursework.model.Hall;
 import com.example.theatercoursework.model.Theater;
+import com.example.theatercoursework.repository.actor.ActorRepository;
+import com.example.theatercoursework.repository.hall.HallRepository;
+import com.example.theatercoursework.repository.producer.ProducerRepository;
 import com.example.theatercoursework.repository.theater.TheaterRepository;
 import com.example.theatercoursework.service.theater.interfaces.ITheaterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +22,6 @@ public class TheaterServiceImpl implements ITheaterService {
 
     @Autowired
     FakeTheater fakeTheater;
-
 
     @PostConstruct
     void init() {

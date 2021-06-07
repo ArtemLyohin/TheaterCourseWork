@@ -32,8 +32,11 @@ public class ActorServiceImpl implements IActorService {
 
     @PostConstruct
     void init() {
-//        fakeActor.getActors().stream().filter(Objects::nonNull).forEach(item -> item.setTheater(theaterRepository
-//        .findAll().get(0)));
+//        fakeActor.getActors()
+//                 .stream()
+//                 .filter(Objects::nonNull)
+//                 .forEach(item -> item.setTheater(theaterRepository.findAll()
+//                                                                   .get(0)));
 //        repository.saveAll(fakeActor.getActors().stream().filter(Objects::nonNull).collect(Collectors.toList()));
     }
 

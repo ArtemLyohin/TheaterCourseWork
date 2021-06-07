@@ -44,52 +44,56 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @PostConstruct
     void init() {
-        repository.saveAll(actorRepository.findAll()
-                                          .stream()
-                                          .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
-                                                                    item.getBirthDate(),item.getTheater(), item.getEmployeeType(),
-                                                                    item.getSalary(),
-                                                                    item.getEmploymentDate(), item.getDescription(),
-                                                                    item.getCreated_at(), item.getModified_at()))
-                                          .collect(Collectors.toList()));
-
-        repository.saveAll(musicianRepository.findAll()
-                                             .stream()
-                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
-                                                                       item.getBirthDate(),item.getTheater(), item.getEmployeeType(),
-                                                                       item.getSalary(),
-                                                                       item.getEmploymentDate(), item
-                                                                               .getDescription(),
-                                                                       item.getCreated_at(), item.getModified_at()))
-                                             .collect(Collectors.toList()));
-
-        repository.saveAll(producerRepository.findAll()
-                                             .stream()
-                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
-                                                                       item.getBirthDate(),item.getTheater(), item.getEmployeeType(),
-                                                                       item.getSalary(),
-                                                                       item.getEmploymentDate(), item
-                                                                               .getDescription(),
-                                                                       item.getCreated_at(), item.getModified_at()))
-                                             .collect(Collectors.toList()));
-
-        repository.saveAll(servantRepository.findAll()
-                                            .stream()
-                                            .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
-                                                                      item.getBirthDate(),item.getTheater(), item.getEmployeeType(),
-                                                                      item.getSalary(),
-                                                                      item.getEmploymentDate(), item.getDescription(),
-                                                                      item.getCreated_at(), item.getModified_at()))
-                                            .collect(Collectors.toList()));
-        repository.saveAll(directorRepository.findAll()
-                                             .stream()
-                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
-                                                                       item.getBirthDate(),item.getTheater(), item.getEmployeeType(),
-                                                                       item.getSalary(),
-                                                                       item.getEmploymentDate(), item.getDescription(),
-                                                                       item.getCreated_at(), item.getModified_at()))
-                                             .collect(
-                                                     Collectors.toList()));
+//        repository.saveAll(actorRepository.findAll()
+//                                          .stream()
+//                                          .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
+//                                                                    item.getBirthDate(), item.getTheater(),
+//                                                                    item.getEmployeeType(),
+//                                                                    item.getSalary(),
+//                                                                    item.getEmploymentDate(), item.getDescription(),
+//                                                                    item.getCreated_at(), item.getModified_at()))
+//                                          .collect(Collectors.toList()));
+//
+//        repository.saveAll(musicianRepository.findAll()
+//                                             .stream()
+//                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
+//                                                                       item.getBirthDate(), item.getTheater(),
+//                                                                       item.getEmployeeType(),
+//                                                                       item.getSalary(),
+//                                                                       item.getEmploymentDate(), item
+//                                                                               .getDescription(),
+//                                                                       item.getCreated_at(), item.getModified_at()))
+//                                             .collect(Collectors.toList()));
+//
+//        repository.saveAll(producerRepository.findAll()
+//                                             .stream()
+//                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
+//                                                                       item.getBirthDate(), item.getTheater(),
+//                                                                       item.getEmployeeType(),
+//                                                                       item.getSalary(),
+//                                                                       item.getEmploymentDate(), item
+//                                                                               .getDescription(),
+//                                                                       item.getCreated_at(), item.getModified_at()))
+//                                             .collect(Collectors.toList()));
+//
+//        repository.saveAll(servantRepository.findAll()
+//                                            .stream()
+//                                            .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
+//                                                                      item.getBirthDate(), item.getTheater(),
+//                                                                      item.getEmployeeType(),
+//                                                                      item.getSalary(),
+//                                                                      item.getEmploymentDate(), item.getDescription(),
+//                                                                      item.getCreated_at(), item.getModified_at()))
+//                                            .collect(Collectors.toList()));
+//        repository.saveAll(directorRepository.findAll()
+//                                             .stream()
+//                                             .map(item -> new Employee(item.getId(), item.getName(), item.getSex(),
+//                                                                       item.getBirthDate(), item.getTheater(),
+//                                                                       item.getEmployeeType(),
+//                                                                       item.getSalary(),
+//                                                                       item.getEmploymentDate(), item.getDescription(),
+//                                                                       item.getCreated_at(), item.getModified_at()))
+//                                             .collect(Collectors.toList()));
 
 
     }

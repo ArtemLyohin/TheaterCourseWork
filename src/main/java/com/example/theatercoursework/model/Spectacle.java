@@ -19,6 +19,7 @@ public class Spectacle {
     @Id
     @EqualsAndHashCode.Include()
     private String id;
+    private String name;
     private Genre genre;
     private TargetAudience targetAudience;
     private Hall hall;
@@ -29,6 +30,7 @@ public class Spectacle {
     private Producer artist;
     private Producer conductor;
     private Producer author;
+    private Integer priceForUsual;
     private String description;
     private LocalDateTime created_at;
     private LocalDateTime modified_at;
