@@ -15,23 +15,23 @@ import java.util.List;
 public class FakeMusician {
     private List<Musician> musicians = new ArrayList<>(Arrays.asList(
             new Musician(null, "Петренко Віталій Назарович", Sex.MALE,
-                         LocalDate.parse("1987-06-18"), EmployeeType.MUSICIAN,
+                         LocalDate.parse("1987-06-18"),null, EmployeeType.MUSICIAN,
                          14000, LocalDate.parse("2019-03-12"), "",
                          LocalDateTime.now(), LocalDateTime.now(), "Гітара"),
             new Musician(null, "Петренко Захар Назарович", Sex.MALE,
-                         LocalDate.parse("1990-09-11"), EmployeeType.MUSICIAN,
+                         LocalDate.parse("1990-09-11"),null, EmployeeType.MUSICIAN,
                          14000, LocalDate.parse("2019-03-12"), "",
                          LocalDateTime.now(), LocalDateTime.now(), "Фортепіано"),
             new Musician(null, "Іваненко Віолетта Георгіївна", Sex.FEMALE,
-                         LocalDate.parse("1995-06-14"), EmployeeType.MUSICIAN,
+                         LocalDate.parse("1995-06-14"),null, EmployeeType.MUSICIAN,
                          11000, LocalDate.parse("2020-01-29"), "",
                          LocalDateTime.now(), LocalDateTime.now(), "Фортепіано"),
             new Musician(null, "Броняк Олександр Віталійович", Sex.MALE,
-                         LocalDate.parse("1982-12-14"), EmployeeType.MUSICIAN,
+                         LocalDate.parse("1982-12-14"),null, EmployeeType.MUSICIAN,
                          10000, LocalDate.parse("2021-04-12"), "",
                          LocalDateTime.now(), LocalDateTime.now(), "Скрипка"),
             new Musician(null, "Никоряк Ігор Артурович", Sex.MALE,
-                         LocalDate.parse("2000-07-28"), EmployeeType.MUSICIAN,
+                         LocalDate.parse("2000-07-28"),null, EmployeeType.MUSICIAN,
                          12000, LocalDate.parse("2019-03-12"), "",
                          LocalDateTime.now(), LocalDateTime.now(), "Гітара")
                                                                     ));

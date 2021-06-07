@@ -13,6 +13,7 @@ public class FakeHall {
     private List<Hall> halls = new ArrayList<>(Arrays.asList(
             Hall.builder()
                 .id(null)
+                .theater(null)
                 .usual(50)
                 .balcony(20)
                 .vip(15)
@@ -22,9 +23,20 @@ public class FakeHall {
                 .build(),
             Hall.builder()
                 .id(null)
+                .theater(null)
                 .usual(100)
                 .balcony(45)
                 .vip(25)
+                .description("")
+                .created_at(LocalDateTime.now())
+                .modified_at(LocalDateTime.now())
+                .build(),
+            Hall.builder()
+                .id(null)
+                .theater(null)
+                .usual(5)
+                .balcony(2)
+                .vip(2)
                 .description("")
                 .created_at(LocalDateTime.now())
                 .modified_at(LocalDateTime.now())

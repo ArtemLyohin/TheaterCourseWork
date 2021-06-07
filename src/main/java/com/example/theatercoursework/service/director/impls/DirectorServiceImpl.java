@@ -3,6 +3,7 @@ package com.example.theatercoursework.service.director.impls;
 import com.example.theatercoursework.data.FakeDirector;
 import com.example.theatercoursework.model.Director;
 import com.example.theatercoursework.repository.director.DirectorRepository;
+import com.example.theatercoursework.repository.theater.TheaterRepository;
 import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
 import com.example.theatercoursework.service.director.interfaces.IDirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,12 @@ public class DirectorServiceImpl implements IDirectorService {
     @Autowired
     EmployeeServiceImpl employeeService;
 
+    @Autowired
+    TheaterRepository theaterRepository;
+
     @PostConstruct
     void init() {
+//        fakeDirector.getDirectors().forEach(item -> item.setTheater(theaterRepository.findAll().get(0)));
 //        repository.saveAll(fakeDirector.getDirectors());
     }
 

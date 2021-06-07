@@ -4,6 +4,7 @@ import com.example.theatercoursework.data.FakeActor;
 import com.example.theatercoursework.model.Actor;
 import com.example.theatercoursework.model.Employee;
 import com.example.theatercoursework.repository.actor.ActorRepository;
+import com.example.theatercoursework.repository.theater.TheaterRepository;
 import com.example.theatercoursework.service.actor.interfaces.IActorService;
 import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class ActorServiceImpl implements IActorService {
@@ -24,9 +27,14 @@ public class ActorServiceImpl implements IActorService {
     @Autowired
     EmployeeServiceImpl employeeService;
 
+    @Autowired
+    TheaterRepository theaterRepository;
+
     @PostConstruct
     void init() {
-//        repository.saveAll(fakeActor.getActors());
+//        fakeActor.getActors().stream().filter(Objects::nonNull).forEach(item -> item.setTheater(theaterRepository
+//        .findAll().get(0)));
+//        repository.saveAll(fakeActor.getActors().stream().filter(Objects::nonNull).collect(Collectors.toList()));
     }
 
     @Override

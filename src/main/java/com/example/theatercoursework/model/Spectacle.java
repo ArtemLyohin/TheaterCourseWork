@@ -1,13 +1,13 @@
 package com.example.theatercoursework.model;
 
-import com.example.theatercoursework.model.enums.EmployeeType;
-import com.example.theatercoursework.model.enums.Sex;
+import com.example.theatercoursework.model.enums.Genre;
+import com.example.theatercoursework.model.enums.TargetAudience;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -15,17 +15,20 @@ import java.time.LocalDateTime;
 @Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Document
-public class Employee {
+public class Spectacle {
     @Id
     @EqualsAndHashCode.Include()
     private String id;
-    private String name;
-    private Sex sex;
-    private LocalDate birthDate;
-    private Theater theater;
-    private EmployeeType employeeType;
-    private int salary;
-    private LocalDate employmentDate;
+    private Genre genre;
+    private TargetAudience targetAudience;
+    private Hall hall;
+    private List<Actor> mainRoles;
+    private List<Actor> understudies;
+    private List<Actor> secondaryRoles;
+    private Producer director;
+    private Producer artist;
+    private Producer conductor;
+    private Producer author;
     private String description;
     private LocalDateTime created_at;
     private LocalDateTime modified_at;

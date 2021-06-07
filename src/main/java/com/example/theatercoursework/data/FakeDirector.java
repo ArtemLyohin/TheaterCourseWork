@@ -15,7 +15,7 @@ import java.util.List;
 public class FakeDirector {
     private List<Director> directors = new ArrayList<>(Arrays.asList(
             new Director(null, "Бірюк Віктор Олегович", Sex.MALE,
-                         LocalDate.parse("1973-10-09"), EmployeeType.DIRECTOR,
+                         LocalDate.parse("1973-10-09"),null, EmployeeType.DIRECTOR,
                          29000, LocalDate.parse("2009-10-11"), "",
                          LocalDateTime.now(), LocalDateTime.now())
                                                                     ));

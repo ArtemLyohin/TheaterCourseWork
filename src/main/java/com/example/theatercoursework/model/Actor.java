@@ -18,11 +18,12 @@ public class Actor extends Employee {
     private int height;
     private Voice voice;
 
-    public Actor(String id, String name, Sex sex, LocalDate birthDate,
-                 EmployeeType employeeType, int salary,
-                 LocalDate employmentDate, String description, LocalDateTime created_at,
-                 LocalDateTime modified_at, int height, Voice voice) {
-        super(id, name, sex, birthDate, employeeType, salary, employmentDate, description, created_at, modified_at);
+    public Actor(String id, String name, Sex sex, LocalDate birthDate, Theater theater,
+                 EmployeeType employeeType, int salary, LocalDate employmentDate, String description,
+                 LocalDateTime created_at, LocalDateTime modified_at, int height,
+                 Voice voice) {
+        super(id, name, sex, birthDate, theater, employeeType, salary, employmentDate, description, created_at,
+              modified_at);
         this.height = height;
         this.voice = voice;
     }

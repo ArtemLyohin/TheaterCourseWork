@@ -3,6 +3,7 @@ package com.example.theatercoursework.service.servant.impls;
 import com.example.theatercoursework.data.FakeServant;
 import com.example.theatercoursework.model.Servant;
 import com.example.theatercoursework.repository.servant.ServantRepository;
+import com.example.theatercoursework.repository.theater.TheaterRepository;
 import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
 import com.example.theatercoursework.service.servant.interfaces.IServantService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,12 @@ public class ServantServiceImpl implements IServantService {
     @Autowired
     EmployeeServiceImpl employeeService;
 
+    @Autowired
+    TheaterRepository theaterRepository;
+
     @PostConstruct
     void init() {
+//        fakeServant.getServants().forEach(item -> item.setTheater(theaterRepository.findAll().get(0)));
 //        repository.saveAll(fakeServant.getServants());
     }
 

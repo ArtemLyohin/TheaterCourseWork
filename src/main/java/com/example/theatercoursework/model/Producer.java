@@ -17,12 +17,12 @@ import java.time.LocalDateTime;
 public class Producer extends Employee {
     private ProducerType producerType;
 
-    public Producer(String id, String name, Sex sex,
-                    LocalDate birthDate, EmployeeType employeeType,
-                    int salary, LocalDate employmentDate, String description, LocalDateTime created_at,
-                    LocalDateTime modified_at,
+    public Producer(String id, String name, Sex sex, LocalDate birthDate,
+                    Theater theater, EmployeeType employeeType, int salary, LocalDate employmentDate,
+                    String description, LocalDateTime created_at, LocalDateTime modified_at,
                     ProducerType producerType) {
-        super(id, name, sex, birthDate, employeeType, salary, employmentDate, description, created_at, modified_at);
+        super(id, name, sex, birthDate, theater, employeeType, salary, employmentDate, description, created_at,
+              modified_at);
         this.producerType = producerType;
     }
 }

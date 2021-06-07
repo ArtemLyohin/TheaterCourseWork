@@ -3,6 +3,7 @@ package com.example.theatercoursework.service.hall.impls;
 import com.example.theatercoursework.data.FakeHall;
 import com.example.theatercoursework.model.Hall;
 import com.example.theatercoursework.repository.hall.HallRepository;
+import com.example.theatercoursework.repository.theater.TheaterRepository;
 import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
 import com.example.theatercoursework.service.hall.interfaces.IHallService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +21,13 @@ public class HallServiceImpl implements IHallService {
     @Autowired
     FakeHall fakeHall;
 
+    @Autowired
+    TheaterRepository theaterRepository;
 
     @PostConstruct
     void init() {
-        repository.saveAll(fakeHall.getHalls());
+//        fakeHall.getHalls().forEach(item -> item.setTheater(theaterRepository.findAll().get(0)));
+//        repository.saveAll(fakeHall.getHalls());
     }
 
     @Override

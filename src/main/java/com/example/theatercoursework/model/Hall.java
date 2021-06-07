@@ -16,6 +16,7 @@ public class Hall {
    @Id
    @EqualsAndHashCode.Include()
    private String id;
+   private Theater theater;
    private Integer usual;
    private Integer vip;
    private Integer balcony;

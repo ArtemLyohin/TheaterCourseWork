@@ -3,6 +3,7 @@ package com.example.theatercoursework.service.producer.impls;
 import com.example.theatercoursework.data.FakeProducer;
 import com.example.theatercoursework.model.Producer;
 import com.example.theatercoursework.repository.producer.ProducerRepository;
+import com.example.theatercoursework.repository.theater.TheaterRepository;
 import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
 import com.example.theatercoursework.service.producer.interfaces.IProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,12 @@ public class ProducerServiceImpl implements IProducerService {
     @Autowired
     EmployeeServiceImpl employeeService;
 
+    @Autowired
+    TheaterRepository theaterRepository;
+
     @PostConstruct
     void init() {
+//        fakeProducer.getProducers().forEach(item -> item.setTheater(theaterRepository.findAll().get(0)));
 //        repository.saveAll(fakeProducer.getProducers());
     }
 
