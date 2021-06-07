@@ -5,9 +5,8 @@ import com.example.theatercoursework.model.Employee;
 import com.example.theatercoursework.model.Musician;
 import com.example.theatercoursework.model.Producer;
 import com.example.theatercoursework.model.enums.EmployeeType;
-import com.example.theatercoursework.service.actor.impls.ActorServiceImpl;
-import com.example.theatercoursework.service.musician.impls.MusicianServiceImpl;
-import com.example.theatercoursework.service.producer.impls.ProducerServiceImpl;
+import com.example.theatercoursework.model.enums.Genre;
+import com.example.theatercoursework.model.enums.PlaceType;
 import com.example.theatercoursework.service.request.impls.RequestServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -117,5 +116,50 @@ public class RequestController {
             @DateTimeFormat(pattern = "yyyy-MM-dd")
                     LocalDate before) {
         return service.getEmployeeWithBirthdateBetween(after, before);
+    }
+
+    @Operation(
+            summary = "Згрупувати дохід за жанром спектаклю",
+            description = "Згрупувати дохід за жанром спектаклю"
+    )
+    @GetMapping("/groupby/genre/get/income")
+    public Map<Genre, Double> groupIncomeByGenre() {
+        return service.groupIncomeByGenre();
+    }
+
+    @Operation(
+            summary = "Згрупувати кількість проданих квитків за жанром спектаклю",
+            description = "Згрупувати кількість проданих квитків за жанром спектаклю"
+    )
+    @GetMapping("/groupby/genre/get/frequency")
+    public Map<Genre, Integer> groupFrequencyByGenre() {
+        return service.groupFrequencyByGenre();
+    }
+
+    @Operation(
+            summary = "Згрупувати дохід за типом місця",
+            description = "Згрупувати дохід за типом місця"
+    )
+    @GetMapping("/groupby/place-type/get/income")
+    public Map<PlaceType, Double> groupIncomeByPlaceType() {
+        return service.groupIncomeByPlaceType();
+    }
+
+    @Operation(
+            summary = "Згрупувати кількість проданих квитків за типом місця",
+            description = "Згрупувати кількість проданих квитків за типом місця"
+    )
+    @GetMapping("/groupby/place-type/get/frequency")
+    public Map<PlaceType, Integer> groupFrequencyByPlaceType() {
+        return service.groupFrequencyByPlaceType();
+    }
+
+    @Operation(
+            summary = "Згрупувати заробіток за датою",
+            description = "Згрупувати заробіток за датою"
+    )
+    @GetMapping("/groupby/date/get/income")
+    public Map<LocalDate, Double> groupIncomeByDate() {
+        return service.groupIncomeByDate();
     }
 }

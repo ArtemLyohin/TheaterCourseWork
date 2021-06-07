@@ -3,7 +3,10 @@ package com.example.theatercoursework.service.request.impls;
 import com.example.theatercoursework.model.*;
 import com.example.theatercoursework.model.enums.EmployeeType;
 import com.example.theatercoursework.model.enums.Genre;
+import com.example.theatercoursework.model.enums.PlaceType;
+import com.example.theatercoursework.repository.actor.ActorRepository;
 import com.example.theatercoursework.repository.employee.EmployeeRepository;
+import com.example.theatercoursework.repository.spectacle.SpectacleRepository;
 import com.example.theatercoursework.repository.ticket.TicketRepository;
 import com.example.theatercoursework.repository.touring.TouringRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,12 @@ public class RequestServiceImpl {
 
     @Autowired
     EmployeeRepository employeeRepository;
+
+    @Autowired
+    ActorRepository actorRepository;
+
+    @Autowired
+    SpectacleRepository spectacleRepository;
 
 
     public Set<Actor> getAllActorsWhoWasInTouring() {
@@ -82,7 +91,8 @@ public class RequestServiceImpl {
                                          },
                                          LinkedHashMap::new));
     }
-    public List<Employee> getEmployeeWithBirthdateAfter(LocalDate after){
+
+    public List<Employee> getEmployeeWithBirthdateAfter(LocalDate after) {
         return employeeRepository.findByBirthDateAfter(after);
     }
 
@@ -94,20 +104,105 @@ public class RequestServiceImpl {
         return employeeRepository.findByBirthDateBetween(after, before);
     }
 
-//    public Map<Genre, Double> groupIncomeByGenre(){
-//        return ticketRepository.findAll()
-//                                 .stream()
-//                                 .collect(Collectors.groupingBy(item -> item.getPerformance().getSpectacle().getGenre(), 0))
-//                                 .entrySet()
-//                                 .stream()
-//                                 .sorted(Map.Entry.comparingByValue())
-//                                 .collect(Collectors.toMap(
-//                                         Map.Entry::getKey,
-//                                         Map.Entry::getValue,
-//                                         (u, v) -> {
-//                                             throw new IllegalStateException(
-//                                                     String.format("Duplicate key %s", u));
-//                                         },
-//                                         LinkedHashMap::new));
-//    }
+    public Map<Genre, Double> groupIncomeByGenre() {
+        return Arrays.stream(Genre.values())
+                     .collect(Collectors.toMap(key -> key, value -> ticketRepository.findAll()
+                                                                                    .stream()
+                                                                                    .filter(item -> value.equals(
+                                                                                            item.getPerformance()
+                                                                                                .getSpectacle()
+                                                                                                .getGenre()))
+                                                                                    .mapToDouble(Ticket::getPrice)
+                                                                                    .sum()))
+                     .entrySet()
+                     .stream()
+                     .sorted(Map.Entry.comparingByValue())
+                     .collect(Collectors.toMap(
+                             Map.Entry::getKey,
+                             Map.Entry::getValue,
+                             (u, v) -> {
+                                 throw new IllegalStateException(
+                                         String.format("Duplicate key %s", u));
+                             },
+                             LinkedHashMap::new));
+    }
+
+    public Map<Genre, Integer> groupFrequencyByGenre() {
+        return Arrays.stream(Genre.values())
+                     .collect(Collectors.toMap(key -> key, value -> ticketRepository.findAll()
+                                                                                    .stream()
+                                                                                    .filter(item -> value.equals(
+                                                                                            item.getPerformance()
+                                                                                                .getSpectacle()
+                                                                                                .getGenre()))
+                                                                                    .mapToInt(frequency -> 1)
+                                                                                    .sum()))
+                     .entrySet()
+                     .stream()
+                     .sorted(Map.Entry.comparingByValue())
+                     .collect(Collectors.toMap(
+                             Map.Entry::getKey,
+                             Map.Entry::getValue,
+                             (u, v) -> {
+                                 throw new IllegalStateException(
+                                         String.format("Duplicate key %s", u));
+                             },
+                             LinkedHashMap::new));
+    }
+
+    public Map<PlaceType, Double> groupIncomeByPlaceType() {
+        return Arrays.stream(PlaceType.values())
+                     .collect(Collectors.toMap(key -> key, value -> ticketRepository.findAll()
+                                                                                    .stream()
+                                                                                    .filter(item -> value.equals(
+                                                                                            item.getPlaceType()))
+                                                                                    .mapToDouble(Ticket::getPrice)
+                                                                                    .sum()))
+                     .entrySet()
+                     .stream()
+                     .sorted(Map.Entry.comparingByValue())
+                     .collect(Collectors.toMap(
+                             Map.Entry::getKey,
+                             Map.Entry::getValue,
+                             (u, v) -> {
+                                 throw new IllegalStateException(
+                                         String.format("Duplicate key %s", u));
+                             },
+                             LinkedHashMap::new));
+    }
+
+    public Map<PlaceType, Integer> groupFrequencyByPlaceType() {
+        return Arrays.stream(PlaceType.values())
+                     .collect(Collectors.toMap(key -> key, value -> ticketRepository.findAll()
+                                                                                    .stream()
+                                                                                    .filter(item -> value.equals(
+                                                                                            item.getPlaceType()))
+                                                                                    .mapToInt(frequency -> 1)
+                                                                                    .sum()))
+                     .entrySet()
+                     .stream()
+                     .sorted(Map.Entry.comparingByValue())
+                     .collect(Collectors.toMap(
+                             Map.Entry::getKey,
+                             Map.Entry::getValue,
+                             (u, v) -> {
+                                 throw new IllegalStateException(
+                                         String.format("Duplicate key %s", u));
+                             },
+                             LinkedHashMap::new));
+    }
+
+    public Map<LocalDate, Double> groupIncomeByDate() {
+        return ticketRepository.findAll()
+                               .stream()
+                               .map(item -> item.getPerformance().getDateAndTime().toLocalDate())
+                               .collect(Collectors.toMap(key -> key,
+                                                         value -> ticketRepository.findAll()
+                                                                                  .stream()
+                                                                                  .filter(item -> value.equals(
+                                                                                          item.getPerformance()
+                                                                                              .getDateAndTime().toLocalDate()))
+                                                                                  .mapToDouble(Ticket::getPrice)
+                                                                                  .sum()));
+    }
 }
