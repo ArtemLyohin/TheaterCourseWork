@@ -2,10 +2,9 @@ package com.example.theatercoursework.service.ticket.impls;
 
 import com.example.theatercoursework.data.FakeTicket;
 import com.example.theatercoursework.model.Ticket;
-import com.example.theatercoursework.model.enums.PlaceType;
 import com.example.theatercoursework.repository.performance.PerformanceRepository;
-import com.example.theatercoursework.repository.ticket.TicketRepository;
 import com.example.theatercoursework.repository.theater.TheaterRepository;
+import com.example.theatercoursework.repository.ticket.TicketRepository;
 import com.example.theatercoursework.service.ticket.interfaces.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

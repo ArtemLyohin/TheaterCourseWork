@@ -74,6 +74,15 @@ public class RequestController {
         return service.groupSalaryByEmployeeType();
     }
 
+    @Operation(
+            summary = "Згрупувати по типу працівника та порахувати їх кількість",
+            description = "Згрупувати по типу працівника та порахувати їх кількість"
+    )
+    @GetMapping("/groupBy/employeeType/get/count")
+    public Map<EmployeeType, Long> groupFrequencyByEmployeeType() {
+        return service.groupFrequencyByEmployeeType();
+    }
+
 
     @Operation(
             summary = "Знайти працівників за днем народження після заданої дати",
@@ -154,12 +163,32 @@ public class RequestController {
         return service.groupFrequencyByPlaceType();
     }
 
+
     @Operation(
-            summary = "Згрупувати заробіток за датою",
-            description = "Згрупувати заробіток за датою"
+            summary = "Дістати заробіток за датами",
+            description = "Дістати заробіток за датами"
     )
-    @GetMapping("/groupby/date/get/income")
-    public Map<LocalDate, Double> groupIncomeByDate() {
-        return service.groupIncomeByDate();
+    @GetMapping("/get/income/is-after-{after}/is-before-{before}")
+    public Double getIncomeBetweenDates(
+            @PathVariable
+            @Parameter(description = "Дата спектаклю після (2021-06-10)")
+            @DateTimeFormat(pattern = "yyyy-MM-dd")
+                    LocalDate after,
+            @PathVariable
+            @Parameter(description = "Дата народження до (2021-06-13)")
+            @DateTimeFormat(pattern = "yyyy-MM-dd")
+                    LocalDate before) {
+        return service.getIncomeBetweenDates(after, before);
+    }
+
+    @Operation(
+            summary = "Дістати акторів за датою",
+            description = "Дістати акторів, які виступають вказаної дати"
+    )
+    @GetMapping("/get/actors/acting-at-{date}")
+    public Set<Actor> getActorsActingAtDate(@PathVariable
+                                            @Parameter(description = "Дата виступу (2021-06-13)")
+                                            @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date) {
+        return service.getActorsActingAtDate(date);
     }
 }
