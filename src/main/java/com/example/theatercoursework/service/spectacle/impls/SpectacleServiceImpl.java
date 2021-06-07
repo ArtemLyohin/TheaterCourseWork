@@ -28,14 +28,10 @@ public class SpectacleServiceImpl implements ISpectacleService {
     ActorRepository actorRepository;
 
     @Autowired
-    HallRepository hallRepository;
-
-    @Autowired
     ProducerRepository producerRepository;
 
     @PostConstruct
     void init() {
-//        fakeSpectacle.getSpectacles().get(0).setHall(hallRepository.findAll().get(0));
 //        fakeSpectacle.getSpectacles().get(0).setMainRoles(Arrays.asList(
 //                actorRepository.findAll().get(0),
 //                actorRepository.findAll().get(1),
@@ -55,7 +51,6 @@ public class SpectacleServiceImpl implements ISpectacleService {
 //        fakeSpectacle.getSpectacles().get(0).setConductor(producerRepository.findAll().get(6));
 //        fakeSpectacle.getSpectacles().get(0).setAuthor(producerRepository.findAll().get(9));
 //        // NEW
-//        fakeSpectacle.getSpectacles().get(1).setHall(hallRepository.findAll().get(1));
 //        fakeSpectacle.getSpectacles().get(1).setMainRoles(Arrays.asList(
 //                actorRepository.findAll().get(0),
 //                actorRepository.findAll().get(3)
@@ -74,7 +69,6 @@ public class SpectacleServiceImpl implements ISpectacleService {
 //        fakeSpectacle.getSpectacles().get(1).setConductor(producerRepository.findAll().get(7));
 //        fakeSpectacle.getSpectacles().get(1).setAuthor(producerRepository.findAll().get(8));
 //        // NEW
-//        fakeSpectacle.getSpectacles().get(2).setHall(hallRepository.findAll().get(0));
 //        fakeSpectacle.getSpectacles().get(2).setMainRoles(Arrays.asList(
 //                actorRepository.findAll().get(5),
 //                actorRepository.findAll().get(6)
@@ -94,7 +88,6 @@ public class SpectacleServiceImpl implements ISpectacleService {
 //        fakeSpectacle.getSpectacles().get(2).setConductor(producerRepository.findAll().get(7));
 //        fakeSpectacle.getSpectacles().get(2).setAuthor(producerRepository.findAll().get(8));
 //        // NEW
-//        fakeSpectacle.getSpectacles().get(3).setHall(hallRepository.findAll().get(0));
 //        fakeSpectacle.getSpectacles().get(3).setMainRoles(Arrays.asList(
 //                actorRepository.findAll().get(3),
 //                actorRepository.findAll().get(6)
@@ -114,7 +107,6 @@ public class SpectacleServiceImpl implements ISpectacleService {
 //        fakeSpectacle.getSpectacles().get(3).setConductor(producerRepository.findAll().get(7));
 //        fakeSpectacle.getSpectacles().get(3).setAuthor(producerRepository.findAll().get(9));
 //        // NEW
-//        fakeSpectacle.getSpectacles().get(4).setHall(hallRepository.findAll().get(2));
 //        fakeSpectacle.getSpectacles().get(4).setMainRoles(Arrays.asList(
 //                actorRepository.findAll().get(0),
 //                actorRepository.findAll().get(2),

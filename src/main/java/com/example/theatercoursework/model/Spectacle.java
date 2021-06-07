@@ -22,7 +22,6 @@ public class Spectacle {
     private String name;
     private Genre genre;
     private TargetAudience targetAudience;
-    private Hall hall;
     private List<Actor> mainRoles;
     private List<Actor> understudies;
     private List<Actor> secondaryRoles;
@@ -31,6 +30,7 @@ public class Spectacle {
     private Producer conductor;
     private Producer author;
     private Integer priceForUsual;
+    private Integer duration;
     private String description;
     private LocalDateTime created_at;
     private LocalDateTime modified_at;
