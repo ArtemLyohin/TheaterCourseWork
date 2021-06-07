@@ -1,6 +1,5 @@
 package com.example.theatercoursework.model;
 
-import com.example.theatercoursework.model.enums.PlaceType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -14,17 +13,19 @@ import java.time.LocalDateTime;
 @Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Document
-public class Ticket {
-    @Schema(description = "ID квитка", accessMode = Schema.AccessMode.READ_ONLY)
+public class Touring {
+    @Schema(description = "ID гастролей", accessMode = Schema.AccessMode.READ_ONLY)
     @Id
     @EqualsAndHashCode.Include()
     private String id;
-    @Schema(description = "Виступ")
-    private Performance performance;
-    @Schema(description = "Тип місця", allowableValues = "USUAL, BALCONY, VIP", example = "USUAL/BALCONY/VIP")
-    private PlaceType placeType;
-    @Schema(description = "Ціна за квиток",accessMode = Schema.AccessMode.READ_ONLY)
-    private Double price;
+    @Schema(description = "Місто")
+    private String city;
+    @Schema(description = "Адреса")
+    private String address;
+    @Schema(description = "Спектакль")
+    private Spectacle spectacle;
+    @Schema(description = "Дата та час виступу", example="2021-06-20")
+    private LocalDateTime dateAndTime;
     @Schema(description = "Опис")
     private String description;
     @Schema(description = "Дата створення об'єтку",accessMode = Schema.AccessMode.READ_ONLY)

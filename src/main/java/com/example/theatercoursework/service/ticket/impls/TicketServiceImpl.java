@@ -30,142 +30,146 @@ public class TicketServiceImpl implements ITicketService {
 
     @PostConstruct
     void init() {
-        fakeTicket.getTickets().get(0).setPerformance(performanceRepository.findAll().get(0));
-        fakeTicket.getTickets().get(0).setPlaceType(PlaceType.USUAL);
-        fakeTicket.getTickets()
-                  .get(0)
-                  .setPrice(performanceRepository.findAll().get(0).getSpectacle().getPriceForUsual()
-                            * PlaceType.USUAL.getValue()
-                            * performanceRepository.findAll().get(0).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(1).setPerformance(performanceRepository.findAll().get(0));
-        fakeTicket.getTickets().get(1).setPlaceType(PlaceType.VIP);
-        fakeTicket.getTickets()
-                  .get(1)
-                  .setPrice(performanceRepository.findAll().get(0).getSpectacle().getPriceForUsual()
-                            * PlaceType.VIP.getValue()
-                            * performanceRepository.findAll().get(0).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(2).setPerformance(performanceRepository.findAll().get(1));
-        fakeTicket.getTickets().get(2).setPlaceType(PlaceType.BALCONY);
-        fakeTicket.getTickets()
-                  .get(2)
-                  .setPrice(performanceRepository.findAll().get(1).getSpectacle().getPriceForUsual()
-                            * PlaceType.BALCONY.getValue()
-                            * performanceRepository.findAll().get(1).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(3).setPerformance(performanceRepository.findAll().get(1));
-        fakeTicket.getTickets().get(3).setPlaceType(PlaceType.USUAL);
-        fakeTicket.getTickets()
-                  .get(3)
-                  .setPrice(performanceRepository.findAll().get(1).getSpectacle().getPriceForUsual()
-                            * PlaceType.USUAL.getValue()
-                            * performanceRepository.findAll().get(1).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(4).setPerformance(performanceRepository.findAll().get(2));
-        fakeTicket.getTickets().get(4).setPlaceType(PlaceType.USUAL);
-        fakeTicket.getTickets()
-                  .get(4)
-                  .setPrice(performanceRepository.findAll().get(2).getSpectacle().getPriceForUsual()
-                            * PlaceType.USUAL.getValue()
-                            * performanceRepository.findAll().get(2).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(5).setPerformance(performanceRepository.findAll().get(2));
-        fakeTicket.getTickets().get(5).setPlaceType(PlaceType.VIP);
-        fakeTicket.getTickets()
-                  .get(5)
-                  .setPrice(performanceRepository.findAll().get(2).getSpectacle().getPriceForUsual()
-                            * PlaceType.VIP.getValue()
-                            * performanceRepository.findAll().get(2).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(6).setPerformance(performanceRepository.findAll().get(3));
-        fakeTicket.getTickets().get(6).setPlaceType(PlaceType.VIP);
-        fakeTicket.getTickets()
-                  .get(6)
-                  .setPrice(performanceRepository.findAll().get(3).getSpectacle().getPriceForUsual()
-                            * PlaceType.VIP.getValue()
-                            * performanceRepository.findAll().get(3).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(7).setPerformance(performanceRepository.findAll().get(3));
-        fakeTicket.getTickets().get(7).setPlaceType(PlaceType.BALCONY);
-        fakeTicket.getTickets()
-                  .get(7)
-                  .setPrice(performanceRepository.findAll().get(3).getSpectacle().getPriceForUsual()
-                            * PlaceType.BALCONY.getValue()
-                            * performanceRepository.findAll().get(3).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(8).setPerformance(performanceRepository.findAll().get(4));
-        fakeTicket.getTickets().get(8).setPlaceType(PlaceType.BALCONY);
-        fakeTicket.getTickets()
-                  .get(8)
-                  .setPrice(performanceRepository.findAll().get(4).getSpectacle().getPriceForUsual()
-                            * PlaceType.BALCONY.getValue()
-                            * performanceRepository.findAll().get(4).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(9).setPerformance(performanceRepository.findAll().get(4));
-        fakeTicket.getTickets().get(9).setPlaceType(PlaceType.BALCONY);
-        fakeTicket.getTickets()
-                  .get(9)
-                  .setPrice(performanceRepository.findAll().get(4).getSpectacle().getPriceForUsual()
-                            * PlaceType.BALCONY.getValue()
-                            * performanceRepository.findAll().get(4).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(10).setPerformance(performanceRepository.findAll().get(5));
-        fakeTicket.getTickets().get(10).setPlaceType(PlaceType.VIP);
-        fakeTicket.getTickets()
-                  .get(10)
-                  .setPrice(performanceRepository.findAll().get(5).getSpectacle().getPriceForUsual()
-                            * PlaceType.VIP.getValue()
-                            * performanceRepository.findAll().get(5).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(11).setPerformance(performanceRepository.findAll().get(6));
-        fakeTicket.getTickets().get(11).setPlaceType(PlaceType.VIP);
-        fakeTicket.getTickets()
-                  .get(11)
-                  .setPrice(performanceRepository.findAll().get(6).getSpectacle().getPriceForUsual()
-                            * PlaceType.VIP.getValue()
-                            * performanceRepository.findAll().get(6).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(12).setPerformance(performanceRepository.findAll().get(7));
-        fakeTicket.getTickets().get(12).setPlaceType(PlaceType.USUAL);
-        fakeTicket.getTickets()
-                  .get(12)
-                  .setPrice(performanceRepository.findAll().get(7).getSpectacle().getPriceForUsual()
-                            * PlaceType.USUAL.getValue()
-                            * performanceRepository.findAll().get(7).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(13).setPerformance(performanceRepository.findAll().get(8));
-        fakeTicket.getTickets().get(13).setPlaceType(PlaceType.USUAL);
-        fakeTicket.getTickets()
-                  .get(13)
-                  .setPrice(performanceRepository.findAll().get(8).getSpectacle().getPriceForUsual()
-                            * PlaceType.USUAL.getValue()
-                            * performanceRepository.findAll().get(8).getPerformanceType().getValue());
-        //NEW
-        fakeTicket.getTickets().get(14).setPerformance(performanceRepository.findAll().get(9));
-        fakeTicket.getTickets().get(14).setPlaceType(PlaceType.USUAL);
-        fakeTicket.getTickets()
-                  .get(14)
-                  .setPrice(performanceRepository.findAll().get(9).getSpectacle().getPriceForUsual()
-                            * PlaceType.USUAL.getValue()
-                            * performanceRepository.findAll().get(9).getPerformanceType().getValue());
-
-
-        repository.saveAll(fakeTicket.getTickets());
+//        fakeTicket.getTickets().get(0).setPerformance(performanceRepository.findAll().get(0));
+//        fakeTicket.getTickets().get(0).setPlaceType(PlaceType.USUAL);
+//        fakeTicket.getTickets()
+//                  .get(0)
+//                  .setPrice(performanceRepository.findAll().get(0).getSpectacle().getPriceForUsual()
+//                            * PlaceType.USUAL.getValue()
+//                            * performanceRepository.findAll().get(0).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(1).setPerformance(performanceRepository.findAll().get(0));
+//        fakeTicket.getTickets().get(1).setPlaceType(PlaceType.VIP);
+//        fakeTicket.getTickets()
+//                  .get(1)
+//                  .setPrice(performanceRepository.findAll().get(0).getSpectacle().getPriceForUsual()
+//                            * PlaceType.VIP.getValue()
+//                            * performanceRepository.findAll().get(0).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(2).setPerformance(performanceRepository.findAll().get(1));
+//        fakeTicket.getTickets().get(2).setPlaceType(PlaceType.BALCONY);
+//        fakeTicket.getTickets()
+//                  .get(2)
+//                  .setPrice(performanceRepository.findAll().get(1).getSpectacle().getPriceForUsual()
+//                            * PlaceType.BALCONY.getValue()
+//                            * performanceRepository.findAll().get(1).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(3).setPerformance(performanceRepository.findAll().get(1));
+//        fakeTicket.getTickets().get(3).setPlaceType(PlaceType.USUAL);
+//        fakeTicket.getTickets()
+//                  .get(3)
+//                  .setPrice(performanceRepository.findAll().get(1).getSpectacle().getPriceForUsual()
+//                            * PlaceType.USUAL.getValue()
+//                            * performanceRepository.findAll().get(1).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(4).setPerformance(performanceRepository.findAll().get(2));
+//        fakeTicket.getTickets().get(4).setPlaceType(PlaceType.USUAL);
+//        fakeTicket.getTickets()
+//                  .get(4)
+//                  .setPrice(performanceRepository.findAll().get(2).getSpectacle().getPriceForUsual()
+//                            * PlaceType.USUAL.getValue()
+//                            * performanceRepository.findAll().get(2).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(5).setPerformance(performanceRepository.findAll().get(2));
+//        fakeTicket.getTickets().get(5).setPlaceType(PlaceType.VIP);
+//        fakeTicket.getTickets()
+//                  .get(5)
+//                  .setPrice(performanceRepository.findAll().get(2).getSpectacle().getPriceForUsual()
+//                            * PlaceType.VIP.getValue()
+//                            * performanceRepository.findAll().get(2).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(6).setPerformance(performanceRepository.findAll().get(3));
+//        fakeTicket.getTickets().get(6).setPlaceType(PlaceType.VIP);
+//        fakeTicket.getTickets()
+//                  .get(6)
+//                  .setPrice(performanceRepository.findAll().get(3).getSpectacle().getPriceForUsual()
+//                            * PlaceType.VIP.getValue()
+//                            * performanceRepository.findAll().get(3).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(7).setPerformance(performanceRepository.findAll().get(3));
+//        fakeTicket.getTickets().get(7).setPlaceType(PlaceType.BALCONY);
+//        fakeTicket.getTickets()
+//                  .get(7)
+//                  .setPrice(performanceRepository.findAll().get(3).getSpectacle().getPriceForUsual()
+//                            * PlaceType.BALCONY.getValue()
+//                            * performanceRepository.findAll().get(3).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(8).setPerformance(performanceRepository.findAll().get(4));
+//        fakeTicket.getTickets().get(8).setPlaceType(PlaceType.BALCONY);
+//        fakeTicket.getTickets()
+//                  .get(8)
+//                  .setPrice(performanceRepository.findAll().get(4).getSpectacle().getPriceForUsual()
+//                            * PlaceType.BALCONY.getValue()
+//                            * performanceRepository.findAll().get(4).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(9).setPerformance(performanceRepository.findAll().get(4));
+//        fakeTicket.getTickets().get(9).setPlaceType(PlaceType.BALCONY);
+//        fakeTicket.getTickets()
+//                  .get(9)
+//                  .setPrice(performanceRepository.findAll().get(4).getSpectacle().getPriceForUsual()
+//                            * PlaceType.BALCONY.getValue()
+//                            * performanceRepository.findAll().get(4).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(10).setPerformance(performanceRepository.findAll().get(5));
+//        fakeTicket.getTickets().get(10).setPlaceType(PlaceType.VIP);
+//        fakeTicket.getTickets()
+//                  .get(10)
+//                  .setPrice(performanceRepository.findAll().get(5).getSpectacle().getPriceForUsual()
+//                            * PlaceType.VIP.getValue()
+//                            * performanceRepository.findAll().get(5).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(11).setPerformance(performanceRepository.findAll().get(6));
+//        fakeTicket.getTickets().get(11).setPlaceType(PlaceType.VIP);
+//        fakeTicket.getTickets()
+//                  .get(11)
+//                  .setPrice(performanceRepository.findAll().get(6).getSpectacle().getPriceForUsual()
+//                            * PlaceType.VIP.getValue()
+//                            * performanceRepository.findAll().get(6).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(12).setPerformance(performanceRepository.findAll().get(7));
+//        fakeTicket.getTickets().get(12).setPlaceType(PlaceType.USUAL);
+//        fakeTicket.getTickets()
+//                  .get(12)
+//                  .setPrice(performanceRepository.findAll().get(7).getSpectacle().getPriceForUsual()
+//                            * PlaceType.USUAL.getValue()
+//                            * performanceRepository.findAll().get(7).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(13).setPerformance(performanceRepository.findAll().get(8));
+//        fakeTicket.getTickets().get(13).setPlaceType(PlaceType.USUAL);
+//        fakeTicket.getTickets()
+//                  .get(13)
+//                  .setPrice(performanceRepository.findAll().get(8).getSpectacle().getPriceForUsual()
+//                            * PlaceType.USUAL.getValue()
+//                            * performanceRepository.findAll().get(8).getPerformanceType().getValue());
+//        //NEW
+//        fakeTicket.getTickets().get(14).setPerformance(performanceRepository.findAll().get(9));
+//        fakeTicket.getTickets().get(14).setPlaceType(PlaceType.USUAL);
+//        fakeTicket.getTickets()
+//                  .get(14)
+//                  .setPrice(performanceRepository.findAll().get(9).getSpectacle().getPriceForUsual()
+//                            * PlaceType.USUAL.getValue()
+//                            * performanceRepository.findAll().get(9).getPerformanceType().getValue());
+//
+//
+//        repository.saveAll(fakeTicket.getTickets());
     }
 
     @Override
     public Ticket create(Ticket ticket) {
         ticket.setModified_at(LocalDateTime.now());
         ticket.setCreated_at(LocalDateTime.now());
-
+        ticket.setPrice(ticket.getPerformance().getSpectacle().getPriceForUsual()
+                        * ticket.getPlaceType().getValue()
+                       * ticket.getPerformance().getPerformanceType().getValue());
         return repository.save(ticket);
     }
 
     @Override
     public Ticket update(Ticket ticket) {
         ticket.setModified_at(LocalDateTime.now());
-
+        ticket.setPrice(ticket.getPerformance().getSpectacle().getPriceForUsual()
+                        * ticket.getPlaceType().getValue()
+                        * ticket.getPerformance().getPerformanceType().getValue());
         return repository.save(ticket);
     }
 

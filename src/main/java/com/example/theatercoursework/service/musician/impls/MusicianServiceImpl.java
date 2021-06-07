@@ -4,6 +4,7 @@ import com.example.theatercoursework.data.FakeMusician;
 import com.example.theatercoursework.model.Musician;
 import com.example.theatercoursework.repository.musician.MusicianRepository;
 import com.example.theatercoursework.repository.theater.TheaterRepository;
+import com.example.theatercoursework.repository.touring.TouringRepository;
 import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
 import com.example.theatercoursework.service.musician.interfaces.IMusicianService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class MusicianServiceImpl implements IMusicianService {
 
     @Autowired
     TheaterRepository theaterRepository;
+
+
+    @Autowired
+    TouringRepository touringRepository;
 
     @PostConstruct
     void init() {
@@ -64,4 +69,5 @@ public class MusicianServiceImpl implements IMusicianService {
     public List<Musician> getAll() {
         return repository.findAll();
     }
+
 }

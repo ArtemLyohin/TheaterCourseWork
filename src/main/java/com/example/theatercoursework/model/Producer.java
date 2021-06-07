@@ -3,6 +3,7 @@ package com.example.theatercoursework.model;
 import com.example.theatercoursework.model.enums.EmployeeType;
 import com.example.theatercoursework.model.enums.ProducerType;
 import com.example.theatercoursework.model.enums.Sex;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Document
 public class Producer extends Employee {
+    @Schema(description = "Тип постановника", allowableValues ="DIRECTOR, ARTIST, CONDUCTOR, AUTHOR", example = " DIRECTOR/ARTIST/CONDUCTOR/AUTHOR")
     private ProducerType producerType;
 
     public Producer(String id, String name, Sex sex, LocalDate birthDate,

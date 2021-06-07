@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@Tag(name = "Ticket's controller", description = "Управління даними про квиткаа")
+@Tag(name = "Ticket's controller", description = "Управління даними про квитки")
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api/tickets")
@@ -29,50 +29,50 @@ public class TicketRestController {
     }
 
     @Operation(
-            summary = "Вивід квиткаа по id",
-            description = "Виводить всю інформацію про заданого квиткаа"
+            summary = "Вивід квитка по id",
+            description = "Виводить всю інформацію заданого квитка"
     )
     @GetMapping("/get/{id}")
     public Ticket getById(
             @PathVariable("id")
-            @Parameter(description = "ID квиткаа")
+            @Parameter(description = "ID квитка")
                     String id) {
         return service.getById(id);
     }
 
     @Operation(
-            summary = "Видалення квиткаа по id",
-            description = "Видаляє заданого квиткаа"
+            summary = "Видалення квитка по id",
+            description = "Видаляє заданого квитка"
     )
     @GetMapping("/delete/{id}")
     public Ticket delete(
             @PathVariable("id")
-            @Parameter(description = "ID квиткаа")
+            @Parameter(description = "ID квитка")
                     String id) {
         return service.delete(service.getById(id));
     }
 
     @Operation(
-            summary = "Створення нового квиткаа",
-            description = "Створює нового квиткаа"
+            summary = "Створення нового квитка",
+            description = "Створює нового квитка"
     )
     @PostMapping("/create")
     public Ticket create(
             @RequestBody
-            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Дані нового квиткаа")
+            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Дані нового квитка")
                     Ticket ticket) {
         return service.create(ticket);
     }
 
     @Operation(
-            summary = "Редагування квиткаа",
-            description = "Шукає квиткаа по id та надає йому оновлену інформацію"
+            summary = "Редагування квитка",
+            description = "Шукає квитка по id та надає йому оновлену інформацію"
     )
     @PostMapping("/edit/{id}")
     public Ticket update(
             @PathVariable
                     String id,
-            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Дані зміненого квиткаа")
+            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Дані зміненого квитка")
             @RequestBody
                     Ticket ticket) {
         ticket.setId(service.getById(id).getId());

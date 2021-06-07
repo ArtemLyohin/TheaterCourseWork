@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Tag(name = "Actor's controller", description = "Управління даними про акторів")
 @CrossOrigin("*")
@@ -70,6 +71,7 @@ public class ActorRestController {
     @PostMapping("/edit/{id}")
     public Actor update(
             @PathVariable
+            @Parameter(description = "ID актора")
                     String id,
             @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Дані зміненого актора")
             @RequestBody
@@ -78,6 +80,5 @@ public class ActorRestController {
         actor.setCreated_at(service.getById(id).getCreated_at());
         return service.update(actor);
     }
-
 
 }

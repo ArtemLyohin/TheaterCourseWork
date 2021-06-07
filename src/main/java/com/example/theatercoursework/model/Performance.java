@@ -19,9 +19,13 @@ public class Performance {
     @Id
     @EqualsAndHashCode.Include()
     private String id;
+    @Schema(description = "Спектакль")
     private Spectacle spectacle;
+    @Schema(description = "Вид виступу", allowableValues = "PREMIERE, USUAL", example = "PREMIERE/USUAL")
     private PerformanceType performanceType;
+    @Schema(description = "Дата та час вистави", example = "2021-06-10T13:30:00.410Z")
     private LocalDateTime dateAndTime;
+    @Schema(description = "Зал, у якому буде виступ")
     private Hall hall;
     @Schema(description = "Опис")
     private String description;

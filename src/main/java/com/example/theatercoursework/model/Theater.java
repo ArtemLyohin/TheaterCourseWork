@@ -18,7 +18,9 @@ public class Theater {
     @Id
     @EqualsAndHashCode.Include()
     private String id;
+    @Schema(description = "Місто")
     private String city;
+    @Schema(description = "Адреса")
     private String address;
     @Schema(description = "Опис")
     private String description;

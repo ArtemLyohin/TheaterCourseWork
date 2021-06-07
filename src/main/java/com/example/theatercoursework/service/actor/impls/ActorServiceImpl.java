@@ -2,9 +2,10 @@ package com.example.theatercoursework.service.actor.impls;
 
 import com.example.theatercoursework.data.FakeActor;
 import com.example.theatercoursework.model.Actor;
-import com.example.theatercoursework.model.Employee;
+import com.example.theatercoursework.model.enums.Voice;
 import com.example.theatercoursework.repository.actor.ActorRepository;
 import com.example.theatercoursework.repository.theater.TheaterRepository;
+import com.example.theatercoursework.repository.touring.TouringRepository;
 import com.example.theatercoursework.service.actor.interfaces.IActorService;
 import com.example.theatercoursework.service.employee.impls.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Service
 public class ActorServiceImpl implements IActorService {
@@ -30,6 +29,9 @@ public class ActorServiceImpl implements IActorService {
     @Autowired
     TheaterRepository theaterRepository;
 
+    @Autowired
+    TouringRepository touringRepository;
+
     @PostConstruct
     void init() {
 //        fakeActor.getActors()
@@ -42,6 +44,7 @@ public class ActorServiceImpl implements IActorService {
 
     @Override
     public Actor create(Actor actor) {
+        actor.setVoice(Voice.ALTO);
         actor.setModified_at(LocalDateTime.now());
         actor.setCreated_at(LocalDateTime.now());
         employeeService.create(actor);
@@ -71,4 +74,6 @@ public class ActorServiceImpl implements IActorService {
     public List<Actor> getAll() {
         return repository.findAll();
     }
+
+
 }

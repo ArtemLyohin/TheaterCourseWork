@@ -2,6 +2,7 @@ package com.example.theatercoursework.model;
 
 import com.example.theatercoursework.model.enums.EmployeeType;
 import com.example.theatercoursework.model.enums.Sex;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Document
 public class Musician extends Employee{
+    @Schema(description = "Музичний інструмент", example = "Гітара")
     private String instrument;
 
     public Musician(String id, String name, Sex sex, LocalDate birthDate,

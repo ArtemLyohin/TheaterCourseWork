@@ -18,9 +18,13 @@ public class Hall {
    @Id
    @EqualsAndHashCode.Include()
    private String id;
+   @Schema(description = "Театр")
    private Theater theater;
+   @Schema(description = "Кількість звичайних місць", example = "70")
    private Integer usual;
+   @Schema(description = "Кількість VIP місць", example = "20")
    private Integer vip;
+   @Schema(description = "Кількість місць на балконі", example = "30")
    private Integer balcony;
    @Schema(description = "Опис")
    private String description;
