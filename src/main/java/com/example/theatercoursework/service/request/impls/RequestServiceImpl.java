@@ -51,7 +51,6 @@ public class RequestServiceImpl {
                                                      .stream()
                                                      .flatMap(item -> item.getSpectacle().getSecondaryRoles().stream())
                                                      .collect(Collectors.toSet());
-
         mainRoles.addAll(understudies);
         mainRoles.addAll(secondaryRoles);
         return mainRoles;
