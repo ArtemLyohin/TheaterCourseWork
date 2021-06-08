@@ -65,7 +65,6 @@ public class RequestServiceImpl {
     }
 
     public Set<Musician> getAllMusiciansWhoWasInTouring() {
-
         return touringRepository.findAll()
                                 .stream()
                                 .flatMap(item -> item.getSpectacle().getMusicians().stream())

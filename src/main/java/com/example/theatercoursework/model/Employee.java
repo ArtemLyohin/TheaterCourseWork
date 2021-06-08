@@ -29,7 +29,7 @@ public class Employee {
     private LocalDate birthDate;
     @Schema(description = "Театр в якому працює")
     private Theater theater;
-    @Schema(description = "Тип працівника", allowableValues="PRODUCER,ACTOR,MUSICIAN,SERVANT", example = "PRODUCER/ACTOR/MUSICIAN/SERVANT")
+    @Schema(description = "Тип працівника", allowableValues="PRODUCER,ACTOR,MUSICIAN,SERVANT,DIRECTOR", example = "PRODUCER/ACTOR/MUSICIAN/SERVANT/DIRECTOR")
     private EmployeeType employeeType;
     @Schema(description = "Зарплата", example = "13000")
     private int salary;

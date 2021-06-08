@@ -6,6 +6,7 @@ public enum PlaceType {
     VIP(1.5);
 
     private final Double value;
+
     private PlaceType(Double value) {
         this.value = value;
     }
